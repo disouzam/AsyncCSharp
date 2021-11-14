@@ -74,7 +74,7 @@ namespace SyncBreakfast
           Console.WriteLine("\tPutting a slice of bread in the toaster");
         }
         Console.WriteLine("\tStart toasting...");
-        Task.Delay(60000).Wait();
+        Task.Delay(15000).Wait();
         Console.WriteLine("\tRemove toast from toaster");
       }
 
@@ -87,13 +87,13 @@ namespace SyncBreakfast
       {
         Console.WriteLine($"\tPutting {slices} slices of bacon in the pan");
         Console.WriteLine("\tCooking first side of bacon...");
-        Task.Delay(60000).Wait();
+        Task.Delay(15000).Wait();
         for (int slice = 0; slice < slices; slice++)
         {
           Console.WriteLine("\tFlipping a slice of bacon");
         }
         Console.WriteLine("\tCooking the second side of bacon...");
-        Task.Delay(60000).Wait();
+        Task.Delay(15000).Wait();
         Console.WriteLine("\tPut bacon on plate");
       }
 
@@ -105,10 +105,10 @@ namespace SyncBreakfast
       if (howMany != 0)
       {
         Console.WriteLine("\tWarming the egg pan...");
-        Task.Delay(60000).Wait();
+        Task.Delay(15000).Wait();
         Console.WriteLine($"\tCracking {howMany} eggs");
         Console.WriteLine("\tCooking the eggs ...");
-        Task.Delay(60000).Wait();
+        Task.Delay(15000).Wait();
         Console.WriteLine("\tPut eggs on plate");
       }
 

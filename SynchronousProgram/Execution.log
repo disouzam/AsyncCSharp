@@ -1,14 +1,14 @@
-START:  Task ef085f81-db7f-4321-9eb6-9b55bf36ea7d - Main
+START:  Task faf76d3a-6b14-4e41-a601-173017590bba - Main
 
 
-START:  Task 0fe29083-0902-4b8d-bfac-4cd9667a5a02 - Pouring coffee
+START:  Task e4614c4d-d7b1-496e-8196-23de70f7ad70 - Pouring coffee
 
 
-FINISH: Task 0fe29083-0902-4b8d-bfac-4cd9667a5a02 - Pouring coffee took 00:00:00.0004169 to finish.
+FINISH: Task e4614c4d-d7b1-496e-8196-23de70f7ad70 - Pouring coffee took 00:00:00.0002277 to finish.   
 
         Coffee is ready
 
-START:  Task df1609d9-114c-4f3f-a8c1-94503b5627a5 - Frying eggs task
+START:  Task cd94af59-3298-49d7-944c-6c5dc2f6c574 - Frying eggs task
 
         Warming the egg pan...
         Cracking 2 eggs
@@ -16,10 +16,10 @@ START:  Task df1609d9-114c-4f3f-a8c1-94503b5627a5 - Frying eggs task
         Put eggs on plate
         Eggs are ready
 
-FINISH: Task df1609d9-114c-4f3f-a8c1-94503b5627a5 - Frying eggs task took 00:02:00.0082832 to finish.
+FINISH: Task cd94af59-3298-49d7-944c-6c5dc2f6c574 - Frying eggs task took 00:00:30.0233023 to finish. 
 
 
-START:  Task 3e8bf118-77dc-4586-9a6f-0c11f8cb89e7 - Frying bacon task
+START:  Task 9000c029-04b7-49bd-b28e-cd1f0e086390 - Frying bacon task
 
         Putting 3 slices of bacon in the pan
         Cooking first side of bacon...
@@ -30,38 +30,40 @@ START:  Task 3e8bf118-77dc-4586-9a6f-0c11f8cb89e7 - Frying bacon task
         Put bacon on plate
         Bacon is ready
 
-FINISH: Task 3e8bf118-77dc-4586-9a6f-0c11f8cb89e7 - Frying bacon task took 00:02:00.0203711 to finish.
+FINISH: Task 9000c029-04b7-49bd-b28e-cd1f0e086390 - Frying bacon task took 00:00:30.0197430 to finish.
 
 
-START:  Task 18362448-950c-4d71-a893-f6eaf48ea48c - Toasting task
+START:  Task 7ddab3cb-4a6a-46d3-a7c9-1c1f5d78ef10 - Toasting task
 
         Putting a slice of bread in the toaster
         Putting a slice of bread in the toaster
         Start toasting...
         Remove toast from toaster
 
-START:  Task 86e11c0c-26e7-48b1-85fd-d5e754d345b9 - Putting butter on the toast
+START:  Task 57723c07-5a37-4e46-85be-38293d15fada - Putting butter on the toast
 
 
-FINISH: Task 86e11c0c-26e7-48b1-85fd-d5e754d345b9 - Putting butter on the toast took 00:00:00.0002514 to finish.
+FINISH: Task 57723c07-5a37-4e46-85be-38293d15fada - Putting butter on the toast took 00:00:00.0001658 
+to finish.
 
 
-START:  Task 2d1aca67-6577-4ba0-83db-1700eda4c106 - Putting jam on the toast
+START:  Task 85625342-f75b-469f-baac-3d5f2733ab32 - Putting jam on the toast
 
 
-FINISH: Task 2d1aca67-6577-4ba0-83db-1700eda4c106 - Putting jam on the toast took 00:00:00.0003675 to finish.
+FINISH: Task 85625342-f75b-469f-baac-3d5f2733ab32 - Putting jam on the toast took 00:00:00.0001177 to 
+finish.
 
         Toast is ready
 
-FINISH: Task 18362448-950c-4d71-a893-f6eaf48ea48c - Toasting task took 00:01:00.0085671 to finish.
+FINISH: Task 7ddab3cb-4a6a-46d3-a7c9-1c1f5d78ef10 - Toasting task took 00:00:15.0157363 to finish.    
 
 
-START:  Task 8d238c6b-b1e0-47bd-81e1-991043312053 - Pouring orange juice
+START:  Task 6a6bb1b4-928c-4f6f-bff2-5e6168ba92f4 - Pouring orange juice
 
 
-FINISH: Task 8d238c6b-b1e0-47bd-81e1-991043312053 - Pouring orange juice took 00:00:00.0003463 to finish.
+FINISH: Task 6a6bb1b4-928c-4f6f-bff2-5e6168ba92f4 - Pouring orange juice took 00:00:00.0003786 to finish.
 
         Orange juice is ready
         Breakfast is ready!
 
-FINISH: Task ef085f81-db7f-4321-9eb6-9b55bf36ea7d - Main took 00:05:00.0500491 to finish.
+FINISH: Task faf76d3a-6b14-4e41-a601-173017590bba - Main took 00:01:15.0690828 to finish.
