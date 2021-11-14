@@ -3,86 +3,131 @@ using System.Threading.Tasks;
 
 namespace SyncBreakfast
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Coffee cup = PourCoffee();
-            Console.WriteLine($"{DateTime.Now} - Coffee is ready");
+      Timer _Timer = new Timer("Main");
 
-            Egg eggs = FryEggs(2);
-            Console.WriteLine($"{DateTime.Now} - Eggs are ready");
+      Coffee cup = PourCoffee();
+      Console.WriteLine("\tCoffee is ready");
 
-            Bacon bacon = FryBacon(3);
-            Console.WriteLine($"{DateTime.Now} - Bacon is ready");
+      Egg eggs = FryEggs(2);
+      Console.WriteLine("\tEggs are ready");
 
-            Toast toast = ToastBread(2);
-            ApplyButter(toast);
-            ApplyJam(toast);
-            Console.WriteLine($"{DateTime.Now} - Toast is ready");
+      Bacon bacon = FryBacon(3);
+      Console.WriteLine("\tBacon is ready");
 
-            Juice OrangeJuice = PourOrangeJuice();
-            Console.WriteLine($"{DateTime.Now} - Orange juice is ready");
-            Console.WriteLine($"{DateTime.Now} - Breakfast is ready!");
-        }
+      Toast toast = ToastBread(2);
+      ApplyButter(toast);
+      ApplyJam(toast);
+      Console.WriteLine("\tToast is ready");
 
-        private static Juice PourOrangeJuice()
-        {
-            Console.WriteLine($"{DateTime.Now} - Pouring orange juice");
-            return new Juice();
-        }
+      Juice OrangeJuice = PourOrangeJuice();
+      Console.WriteLine("\tOrange juice is ready");
+      Console.WriteLine("\tBreakfast is ready!");
 
-        private static void ApplyJam(Toast toast) =>
-            Console.WriteLine($"{DateTime.Now} - Putting jam on the toast");
-
-        private static void ApplyButter(Toast toast) =>
-            Console.WriteLine($"{DateTime.Now} - Putting butter on the toast");
-
-        private static Toast ToastBread(int slices)
-        {
-            for (int slice = 0; slice < slices; slice++)
-            {
-                Console.WriteLine($"{DateTime.Now} - Putting a slice of bread in the toaster");
-            }
-            Console.WriteLine($"{DateTime.Now} - Start toasting...");
-            Task.Delay(3000).Wait();
-            Console.WriteLine($"{DateTime.Now} - Remove toast from toaster");
-
-            return new Toast();
-        }
-
-        private static Bacon FryBacon(int slices)
-        {
-            Console.WriteLine($"{DateTime.Now} - Putting {slices} slices of bacon in the pan");
-            Console.WriteLine($"{DateTime.Now} - Cooking first side of bacon...");
-            Task.Delay(3000).Wait();
-            for (int slice = 0; slice < slices; slice++)
-            {
-                Console.WriteLine($"{DateTime.Now} - flipping a slice of bacon");
-            }
-            Console.WriteLine($"{DateTime.Now} - Cooking the second side of bacon...");
-            Task.Delay(3000).Wait();
-            Console.WriteLine($"{DateTime.Now} - Put bacon on plate");
-
-            return new Bacon();
-        }
-
-        private static Egg FryEggs(int howMany)
-        {
-            Console.WriteLine($"{DateTime.Now} - Warming the egg pan...");
-            Task.Delay(3000).Wait();
-            Console.WriteLine($"{DateTime.Now} - Cracking {howMany} eggs");
-            Console.WriteLine($"{DateTime.Now} - Cooking the eggs ...");
-            Task.Delay(3000).Wait();
-            Console.WriteLine($"{DateTime.Now} - Put eggs on plate");
-
-            return new Egg();
-        }
-
-        private static Coffee PourCoffee()
-        {
-            Console.WriteLine($"{DateTime.Now} - Pouring coffee - ");
-            return new Coffee();
-        }
+      _Timer.recordEndTime();
+      Console.WriteLine(_Timer.ToString());
     }
+
+    private static Juice PourOrangeJuice()
+    {
+      Timer _Timer = new Timer("Pouring orange juice");
+
+      _Timer.recordEndTime();
+      Console.WriteLine(_Timer.ToString());
+      return new Juice();
+    }
+
+    private static void ApplyJam(Toast toast)
+    {
+      Timer _Timer = new Timer("Putting jam on the toast");
+
+      _Timer.recordEndTime();
+      Console.WriteLine(_Timer.ToString());
+    }
+
+    private static void ApplyButter(Toast toast)
+    {
+      Timer _Timer = new Timer("Putting butter on the toast");
+
+      _Timer.recordEndTime();
+      Console.WriteLine(_Timer.ToString());
+    }
+
+    private static Toast ToastBread(int slices)
+    {
+      if (slices != 0)
+      {
+        Timer _Timer = new Timer("Toasting task");
+
+        for (int slice = 0; slice < slices; slice++)
+        {
+          Console.WriteLine("\tPutting a slice of bread in the toaster");
+        }
+        Console.WriteLine("\tStart toasting...");
+        Task.Delay(3000).Wait();
+        Console.WriteLine("\tRemove toast from toaster");
+
+        _Timer.recordEndTime();
+        Console.WriteLine(_Timer.ToString());
+      }
+
+      return new Toast();
+    }
+
+    private static Bacon FryBacon(int slices)
+    {
+      if (slices != 0)
+      {
+        Timer _Timer = new Timer("Frying bacon task");
+
+        Console.WriteLine($"\tPutting {slices} slices of bacon in the pan");
+        Console.WriteLine("\tCooking first side of bacon...");
+        Task.Delay(3000).Wait();
+        for (int slice = 0; slice < slices; slice++)
+        {
+          Console.WriteLine("\tFlipping a slice of bacon");
+        }
+        Console.WriteLine("\tCooking the second side of bacon...");
+        Task.Delay(3000).Wait();
+        Console.WriteLine("\tPut bacon on plate");
+
+        _Timer.recordEndTime();
+        Console.WriteLine(_Timer.ToString());
+      }
+
+      return new Bacon();
+    }
+
+    private static Egg FryEggs(int howMany)
+    {
+      if (howMany != 0)
+      {
+        Timer _Timer = new Timer("Frying eggs task");
+
+        Console.WriteLine("\tWarming the egg pan...");
+        Task.Delay(3000).Wait();
+        Console.WriteLine($"\tCracking {howMany} eggs");
+        Console.WriteLine("\tCooking the eggs ...");
+        Task.Delay(3000).Wait();
+        Console.WriteLine("\tPut eggs on plate");
+
+        _Timer.recordEndTime();
+        Console.WriteLine(_Timer.ToString());
+      }
+
+      return new Egg();
+    }
+
+    private static Coffee PourCoffee()
+    {
+      Timer _Timer = new Timer("Pouring coffee");
+
+      _Timer.recordEndTime();
+      Console.WriteLine(_Timer.ToString());
+      return new Coffee();
+    }
+  }
 }
