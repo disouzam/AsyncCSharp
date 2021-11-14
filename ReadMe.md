@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Source of the code and/or the ideas presented here:
 
 ## Asynchronous programming with async and await
