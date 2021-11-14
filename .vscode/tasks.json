@@ -62,5 +62,17 @@
       ],
       "problemMatcher": "$msCompile"
     },
+    {
+      "label": "build Async 3",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/Async3/Async3.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
   ]
 }
