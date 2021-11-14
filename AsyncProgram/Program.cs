@@ -22,17 +22,15 @@ namespace AsyncBreakfast
       Timer ToastBread_Timer = new Timer("Toasting task");
       Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
 
-      Egg eggs = await eggsTask;
+      await Task.WhenAll(eggsTask,baconTask,toastTask);
       Console.WriteLine("\tEggs are ready");
       FryEggs_Timer.recordEndTime();
       Console.WriteLine(FryEggs_Timer.ToString());
 
-      Bacon bacon = await baconTask;
       Console.WriteLine("\tBacon is ready");
       FryBacon_Timer.recordEndTime();
       Console.WriteLine(FryBacon_Timer.ToString());
 
-      Toast toast = await toastTask;
       Console.WriteLine("\tToast is ready");
       ToastBread_Timer.recordEndTime();
       Console.WriteLine(ToastBread_Timer.ToString());
