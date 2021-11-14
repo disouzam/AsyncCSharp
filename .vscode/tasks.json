@@ -50,5 +50,17 @@
       ],
       "problemMatcher": "$msCompile"
     },
+    {
+      "label": "build Async 2",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/Async2/Async2.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
   ]
 }
