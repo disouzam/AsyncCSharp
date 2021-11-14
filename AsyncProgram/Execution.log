@@ -1,0 +1,67 @@
+START:  Task 58a8f89a-2542-4bd7-87c8-23a402b6f058 - Main
+
+
+START:  Task 0e8a1f09-c611-4c78-9368-c17950bd2510 - Pouring coffee
+
+
+FINISH: Task 0e8a1f09-c611-4c78-9368-c17950bd2510 - Pouring coffee took 00:00:00.0002415 to finish.
+
+        Coffee is ready
+
+START:  Task 87a5d73e-102e-41c3-943c-e4b7282b3de7 - Frying eggs task
+
+        Warming the egg pan...
+        Cracking 2 eggs
+        Cooking the eggs ...
+        Put eggs on plate
+        Eggs are ready
+
+FINISH: Task 87a5d73e-102e-41c3-943c-e4b7282b3de7 - Frying eggs task took 00:02:00.0109327 to finish.
+
+
+START:  Task a3077319-d62f-4b42-b357-e0fc9b17632f - Frying bacon task
+
+        Putting 3 slices of bacon in the pan
+        Cooking first side of bacon...
+        Flipping a slice of bacon
+        Flipping a slice of bacon
+        Flipping a slice of bacon
+        Cooking the second side of bacon...
+        Put bacon on plate
+        Bacon is ready
+
+FINISH: Task a3077319-d62f-4b42-b357-e0fc9b17632f - Frying bacon task took 00:02:00.0180970 to finish.
+
+
+START:  Task 2ae3471d-0a23-4372-b74c-9a94490ccbb5 - Toasting task
+
+        Putting a slice of bread in the toaster
+        Putting a slice of bread in the toaster
+        Start toasting...
+        Remove toast from toaster
+
+START:  Task 436d5f20-cc7c-4002-91df-af89573fd67f - Putting butter on the toast
+
+
+FINISH: Task 436d5f20-cc7c-4002-91df-af89573fd67f - Putting butter on the toast took 00:00:00.0003751 to finish.
+
+
+START:  Task c79680a9-b69a-4eb5-8a3a-1a2da3915653 - Putting jam on the toast
+
+
+FINISH: Task c79680a9-b69a-4eb5-8a3a-1a2da3915653 - Putting jam on the toast took 00:00:00.0003775 to finish.
+
+        Toast is ready
+
+FINISH: Task 2ae3471d-0a23-4372-b74c-9a94490ccbb5 - Toasting task took 00:01:00.0274357 to finish.
+
+
+START:  Task aa1170a5-594f-40aa-8c60-ff210de92722 - Pouring orange juice
+
+
+FINISH: Task aa1170a5-594f-40aa-8c60-ff210de92722 - Pouring orange juice took 00:00:00.0003742 to finish.
+
+        Orange juice is ready
+        Breakfast is ready!
+
+FINISH: Task 58a8f89a-2542-4bd7-87c8-23a402b6f058 - Main took 00:05:00.0661930 to finish.
