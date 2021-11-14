@@ -74,7 +74,7 @@ namespace AsyncBreakfast
           Console.WriteLine("\tPutting a slice of bread in the toaster");
         }
         Console.WriteLine("\tStart toasting...");
-        await Task.Delay(3000);
+        await Task.Delay(60000);
         Console.WriteLine("\tRemove toast from toaster");
       }
 
@@ -89,13 +89,13 @@ namespace AsyncBreakfast
 
         Console.WriteLine($"\tPutting {slices} slices of bacon in the pan");
         Console.WriteLine("\tCooking first side of bacon...");
-        await Task.Delay(3000);
+        await Task.Delay(60000);
         for (int slice = 0; slice < slices; slice++)
         {
           Console.WriteLine("\tFlipping a slice of bacon");
         }
         Console.WriteLine("\tCooking the second side of bacon...");
-        await Task.Delay(3000);
+        await Task.Delay(60000);
         Console.WriteLine("\tPut bacon on plate");
       }
 
@@ -107,10 +107,10 @@ namespace AsyncBreakfast
       if (howMany != 0)
       {
         Console.WriteLine("\tWarming the egg pan...");
-        await Task.Delay(3000);
+        await Task.Delay(60000);
         Console.WriteLine($"\tCracking {howMany} eggs");
         Console.WriteLine("\tCooking the eggs ...");
-        await Task.Delay(3000);
+        await Task.Delay(60000);
         Console.WriteLine("\tPut eggs on plate");
       }
 

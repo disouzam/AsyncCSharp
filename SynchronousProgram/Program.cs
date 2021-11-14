@@ -67,7 +67,7 @@ namespace SyncBreakfast
           Console.WriteLine("\tPutting a slice of bread in the toaster");
         }
         Console.WriteLine("\tStart toasting...");
-        Task.Delay(3000).Wait();
+        Task.Delay(60000).Wait();
         Console.WriteLine("\tRemove toast from toaster");
 
         _Timer.recordEndTime();
@@ -85,13 +85,13 @@ namespace SyncBreakfast
 
         Console.WriteLine($"\tPutting {slices} slices of bacon in the pan");
         Console.WriteLine("\tCooking first side of bacon...");
-        Task.Delay(3000).Wait();
+        Task.Delay(60000).Wait();
         for (int slice = 0; slice < slices; slice++)
         {
           Console.WriteLine("\tFlipping a slice of bacon");
         }
         Console.WriteLine("\tCooking the second side of bacon...");
-        Task.Delay(3000).Wait();
+        Task.Delay(60000).Wait();
         Console.WriteLine("\tPut bacon on plate");
 
         _Timer.recordEndTime();
@@ -108,10 +108,10 @@ namespace SyncBreakfast
         Timer _Timer = new Timer("Frying eggs task");
 
         Console.WriteLine("\tWarming the egg pan...");
-        Task.Delay(3000).Wait();
+        Task.Delay(60000).Wait();
         Console.WriteLine($"\tCracking {howMany} eggs");
         Console.WriteLine("\tCooking the eggs ...");
-        Task.Delay(3000).Wait();
+        Task.Delay(60000).Wait();
         Console.WriteLine("\tPut eggs on plate");
 
         _Timer.recordEndTime();
