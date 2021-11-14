@@ -1,0 +1,22 @@
+1. Correct execution
+2. CorrectMethod has started! - 11/14/2021 5:32:18 PM - GUID:21e3eb30-5229-4200-aa5e-3b967ff95c4b
+3. Expected end time: 11/14/2021 5:33:18 PM <> Actual end time: 11/14/2021 5:33:18 PM - GUID:21e3eb30-5229-4200-aa5e-3b967ff95c4b
+        4. Before delay in main program...
+        5. After delay in main program...
+6. CorrectMethod just finished!
+
+
+1. Wrong execution
+2. WrongMethod has started! - 11/14/2021 5:33:33 PM - GUID:8963cd0e-e8f3-4c28-a8c2-354f9b7a2b3d
+        4. Before delay in main program...
+        5. After delay in main program...
+6. WrongMethod just finished!
+
+
+1. Second way of Wrong execution
+2. WrongMethod has started! - 11/14/2021 5:33:38 PM - GUID:dd7d8d9d-6621-4ee4-b148-cede46d4c7a5
+        4. Before delay in main program...
+3. Expected end time: 11/14/2021 5:34:33 PM <> Actual end time: 11/14/2021 5:34:33 PM - GUID:8963cd0e-e8f3-4c28-a8c2-354f9b7a2b3d
+3. Expected end time: 11/14/2021 5:34:38 PM <> Actual end time: 11/14/2021 5:34:38 PM - GUID:dd7d8d9d-6621-4ee4-b148-cede46d4c7a5
+        5. After delay in main program...
+6. WrongMethod just finished!
