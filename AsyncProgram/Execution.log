@@ -1,67 +1,67 @@
-START:  Task 97d9c8e0-e035-463a-ace2-89c9b12b744d - Main
+START:  Task 066bc544-b7b1-4206-bba0-58b71a9d7ace - Main
 
 
-START:  Task 5b207c02-7d41-40e9-8e9e-7ad437a0537b - Pouring coffee
+START:  Task 82885326-1a41-4a04-b774-7ac9995dfda3 - Pouring coffee
 
 
-FINISH: Task 5b207c02-7d41-40e9-8e9e-7ad437a0537b - Pouring coffee took 00:00:00.0002742 to finish.
+FINISH: Task 82885326-1a41-4a04-b774-7ac9995dfda3 - Pouring coffee took 00:00:00.0001976 to finish.
 
         Coffee is ready
 
-START:  Task ff26b3f8-d3db-41e6-b7b2-bb932f3d3b57 - Frying eggs task
+START:  Task ae00d5a1-142a-40fe-a947-5b748c59eb6c - Frying eggs task
 
         Warming the egg pan...
-        Cracking 2 eggs
-        Cooking the eggs ...
-        Put eggs on plate
-        Eggs are ready
 
-FINISH: Task ff26b3f8-d3db-41e6-b7b2-bb932f3d3b57 - Frying eggs task took 00:00:30.0270222 to finish.
-
-
-START:  Task dd271346-3af2-420a-933a-43e336aadc48 - Frying bacon task
+START:  Task c5e52c0d-954a-4ce8-9bcb-41c98f3ccf2b - Frying bacon task
 
         Putting 3 slices of bacon in the pan
         Cooking first side of bacon...
-        Flipping a slice of bacon
-        Flipping a slice of bacon
-        Flipping a slice of bacon
-        Cooking the second side of bacon...
-        Put bacon on plate
-        Bacon is ready
 
-FINISH: Task dd271346-3af2-420a-933a-43e336aadc48 - Frying bacon task took 00:00:30.0105376 to finish.
-
-
-START:  Task dd4eff99-c4e3-46e4-b1bb-29b3d5d69aa6 - Toasting task
+START:  Task 2c959d8d-c24f-4f0d-9437-f958286f39fe - Toasting task
 
         Putting a slice of bread in the toaster
         Putting a slice of bread in the toaster
         Start toasting...
-        Remove toast from toaster
+        Remove toast from toaster - ThreadId:4
+        Flipping a slice of bacon
+        Flipping a slice of bacon
+        Flipping a slice of bacon
+        Cooking the second side of bacon...
+        Cracking 2 eggs
+        Cooking the eggs ...
 
-START:  Task ff8b264f-8bae-4b8d-abc5-491cceb5fe9d - Putting butter on the toast
+START:  Task 9b26f2af-5ac6-4ef8-872b-0c99dd205cfa - Putting butter on the toast
 
 
-FINISH: Task ff8b264f-8bae-4b8d-abc5-491cceb5fe9d - Putting butter on the toast took 00:00:00.0000544 to finish.
+FINISH: Task 9b26f2af-5ac6-4ef8-872b-0c99dd205cfa - Putting butter on the toast took 00:00:00.0009811 to finish.
 
 
-START:  Task 8225fae9-7f50-4952-8fa5-285da055d8d6 - Putting jam on the toast
+START:  Task 8f49ae66-704c-4685-9cee-31678d1eb96c - Putting jam on the toast
 
 
-FINISH: Task 8225fae9-7f50-4952-8fa5-285da055d8d6 - Putting jam on the toast took 00:00:00.0001569 to finish.
+FINISH: Task 8f49ae66-704c-4685-9cee-31678d1eb96c - Putting jam on the toast took 00:00:00.0003323 to finish.
 
         Toast is ready
 
-FINISH: Task dd4eff99-c4e3-46e4-b1bb-29b3d5d69aa6 - Toasting task took 00:00:15.0187798 to finish.
+FINISH: Task 2c959d8d-c24f-4f0d-9437-f958286f39fe - Toasting task took 00:00:15.0153740 to finish.
 
 
-START:  Task b9f62fb5-0bc6-4590-95eb-495f62db3d38 - Pouring orange juice
+START:  Task 54bc89a0-239f-4d3d-801a-5c6e0ce955ca - Pouring orange juice
 
 
-FINISH: Task b9f62fb5-0bc6-4590-95eb-495f62db3d38 - Pouring orange juice took 00:00:00.0002802 to finish.
+FINISH: Task 54bc89a0-239f-4d3d-801a-5c6e0ce955ca - Pouring orange juice took 00:00:00.0005519 to finish.
 
         Orange juice is ready
         Breakfast is ready!
+        Put bacon on plate - ThreadId:6
+        Put eggs on plate - ThreadId:System.Threading.Thread
+        Eggs are ready
 
-FINISH: Task 97d9c8e0-e035-463a-ace2-89c9b12b744d - Main took 00:01:15.0670470 to finish.
+FINISH: Task ae00d5a1-142a-40fe-a947-5b748c59eb6c - Frying eggs task took 00:00:30.0275570 to finish.
+
+        Bacon is ready
+
+FINISH: Task c5e52c0d-954a-4ce8-9bcb-41c98f3ccf2b - Frying bacon task took 00:00:30.0252684 to finish.
+
+
+FINISH: Task 066bc544-b7b1-4206-bba0-58b71a9d7ace - Main took 00:00:30.0358200 to finish.

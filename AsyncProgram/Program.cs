@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AsyncBreakfast
@@ -14,17 +15,9 @@ namespace AsyncBreakfast
 
       Timer FryEggs_Timer = new Timer("Frying eggs task");
       Task<Egg> eggsTask = FryEggsAsync(2);
-      Egg eggs = await eggsTask;
-      Console.WriteLine("\tEggs are ready");
-      FryEggs_Timer.recordEndTime();
-      Console.WriteLine(FryEggs_Timer.ToString());
 
       Timer FryBacon_Timer = new Timer("Frying bacon task");
       Task<Bacon> baconTask = FryBaconAsync(3);
-      Bacon bacon = await baconTask;
-      Console.WriteLine("\tBacon is ready");
-      FryBacon_Timer.recordEndTime();
-      Console.WriteLine(FryBacon_Timer.ToString());
 
       Timer ToastBread_Timer = new Timer("Toasting task");
       Task<Toast> toastTask = ToastBreadAsync(2);
@@ -38,6 +31,16 @@ namespace AsyncBreakfast
       Juice OrangeJuice = PourOrangeJuice();
       Console.WriteLine("\tOrange juice is ready");
       Console.WriteLine("\tBreakfast is ready!");
+
+      Egg eggs = await eggsTask;
+      Console.WriteLine("\tEggs are ready");
+      FryEggs_Timer.recordEndTime();
+      Console.WriteLine(FryEggs_Timer.ToString());
+
+      Bacon bacon = await baconTask;
+      Console.WriteLine("\tBacon is ready");
+      FryBacon_Timer.recordEndTime();
+      Console.WriteLine(FryBacon_Timer.ToString());
 
       _Timer.recordEndTime();
       Console.WriteLine(_Timer.ToString());
@@ -78,7 +81,7 @@ namespace AsyncBreakfast
         }
         Console.WriteLine("\tStart toasting...");
         await Task.Delay(15000);
-        Console.WriteLine("\tRemove toast from toaster");
+        Console.WriteLine($"\tRemove toast from toaster - ThreadId:{Thread.CurrentThread.ManagedThreadId}");
       }
 
       return new Toast();
@@ -99,7 +102,7 @@ namespace AsyncBreakfast
         }
         Console.WriteLine("\tCooking the second side of bacon...");
         await Task.Delay(15000);
-        Console.WriteLine("\tPut bacon on plate");
+        Console.WriteLine($"\tPut bacon on plate - ThreadId:{Thread.CurrentThread.ManagedThreadId}");
       }
 
       return new Bacon();
@@ -114,7 +117,7 @@ namespace AsyncBreakfast
         Console.WriteLine($"\tCracking {howMany} eggs");
         Console.WriteLine("\tCooking the eggs ...");
         await Task.Delay(15000);
-        Console.WriteLine("\tPut eggs on plate");
+        Console.WriteLine($"\tPut eggs on plate - ThreadId:{Thread.CurrentThread}");
       }
 
       return new Egg();
