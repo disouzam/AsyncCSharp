@@ -8,9 +8,14 @@ namespace Async2
   {
     public static async Task Method1()
     {
-      Console.WriteLine("Method 1 has started!");
-      Task.Delay(15000);
-      Console.WriteLine("Method 1 finished!");
+      DateTime startTime;
+      int delay = 15000;
+      Console.WriteLine($"Method 1 has started! - {startTime = DateTime.Now}");
+      
+      Task.Delay(delay);
+
+      DateTime endTime;
+      Console.WriteLine($"Method 1 finished - Just have finished at {endTime = startTime.AddMilliseconds(delay)}! - {((DateTime.Now < endTime) ? "Wrong Early execution" : "Correct execution.")}");
     }
   }
 }
