@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -22,18 +23,33 @@ namespace AsyncBreakfast
       Timer ToastBread_Timer = new Timer("Toasting task");
       Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
 
-      await Task.WhenAll(eggsTask,baconTask,toastTask);
-      Console.WriteLine("\tEggs are ready");
-      FryEggs_Timer.recordEndTime();
-      Console.WriteLine(FryEggs_Timer.ToString());
+      var breakfastTasks = new List<Task> { eggsTask, baconTask, toastTask };
 
-      Console.WriteLine("\tBacon is ready");
-      FryBacon_Timer.recordEndTime();
-      Console.WriteLine(FryBacon_Timer.ToString());
+      while (breakfastTasks.Count > 0)
+      {
+        Task finishedTask = await Task.WhenAny(breakfastTasks);
 
-      Console.WriteLine("\tToast is ready");
-      ToastBread_Timer.recordEndTime();
-      Console.WriteLine(ToastBread_Timer.ToString());
+        if (finishedTask == eggsTask)
+        {
+          Console.WriteLine("\tEggs are ready");
+          FryEggs_Timer.recordEndTime();
+          Console.WriteLine(FryEggs_Timer.ToString());
+        }
+        else if (finishedTask == baconTask)
+        {
+          Console.WriteLine("\tBacon is ready");
+          FryBacon_Timer.recordEndTime();
+          Console.WriteLine(FryBacon_Timer.ToString());
+        }
+        else if (finishedTask == toastTask)
+        {
+          Console.WriteLine("\tToast is ready");
+          ToastBread_Timer.recordEndTime();
+          Console.WriteLine(ToastBread_Timer.ToString());
+        }
+        breakfastTasks.Remove(finishedTask);
+        Console.WriteLine($"Breakfast tasks count: {breakfastTasks.Count}");
+      }
 
       Juice OrangeJuice = PourOrangeJuice();
       Console.WriteLine("\tOrange juice is ready");
