@@ -21,12 +21,12 @@ namespace AsyncBreakfast
             ApplyJam(toast);
             Console.WriteLine($"{DateTime.Now} - Toast is ready");
 
-            Juice oj = PourOJ();
+            Juice OrangeJuice = PourOrangeJuice();
             Console.WriteLine($"{DateTime.Now} - Orange juice is ready");
             Console.WriteLine($"{DateTime.Now} - Breakfast is ready!");
         }
 
-        private static Juice PourOJ()
+        private static Juice PourOrangeJuice()
         {
             Console.WriteLine($"{DateTime.Now} - Pouring orange juice");
             return new Juice();
