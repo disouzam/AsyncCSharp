@@ -8,21 +8,21 @@ namespace SyncBreakfast
         static void Main(string[] args)
         {
             Coffee cup = PourCoffee();
-            Console.WriteLine("coffee is ready");
+            Console.WriteLine("Coffee is ready");
 
             Egg eggs = FryEggs(2);
-            Console.WriteLine("eggs are ready");
+            Console.WriteLine("Eggs are ready");
 
             Bacon bacon = FryBacon(3);
-            Console.WriteLine("bacon is ready");
+            Console.WriteLine("Bacon is ready");
 
             Toast toast = ToastBread(2);
             ApplyButter(toast);
             ApplyJam(toast);
-            Console.WriteLine("toast is ready");
+            Console.WriteLine("Toast is ready");
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is ready");
+            Console.WriteLine("Orange juice is ready");
             Console.WriteLine("Breakfast is ready!");
         }
 
@@ -32,10 +32,10 @@ namespace SyncBreakfast
             return new Juice();
         }
 
-        private static void ApplyJam(Toast toast) => 
+        private static void ApplyJam(Toast toast) =>
             Console.WriteLine("Putting jam on the toast");
 
-        private static void ApplyButter(Toast toast) => 
+        private static void ApplyButter(Toast toast) =>
             Console.WriteLine("Putting butter on the toast");
 
         private static Toast ToastBread(int slices)
