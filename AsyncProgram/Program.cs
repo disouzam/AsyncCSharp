@@ -80,9 +80,11 @@ namespace AsyncBreakfast
         }
         Console.WriteLine("\tStart toasting...");
         await Task.Delay(15000);
-        Console.WriteLine($"\tRemove toast from toaster - ThreadId:{Thread.CurrentThread.ManagedThreadId}");
+        Console.WriteLine("\tFire! Toast is ruined!");
+        throw new InvalidOperationException("The toaster is on fire");
+        await Task.Delay(15000);
+        Console.WriteLine("\tRemove toast from toaster");
       }
-
       return new Toast();
     }
 
