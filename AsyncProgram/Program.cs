@@ -20,17 +20,7 @@ namespace AsyncBreakfast
       Task<Bacon> baconTask = FryBaconAsync(3);
 
       Timer ToastBread_Timer = new Timer("Toasting task");
-      Task<Toast> toastTask = ToastBreadAsync(2);
-      Toast toast = await toastTask;
-      ApplyButter(toast);
-      ApplyJam(toast);
-      Console.WriteLine("\tToast is ready");
-      ToastBread_Timer.recordEndTime();
-      Console.WriteLine(ToastBread_Timer.ToString());
-
-      Juice OrangeJuice = PourOrangeJuice();
-      Console.WriteLine("\tOrange juice is ready");
-      Console.WriteLine("\tBreakfast is ready!");
+      Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
 
       Egg eggs = await eggsTask;
       Console.WriteLine("\tEggs are ready");
@@ -41,6 +31,15 @@ namespace AsyncBreakfast
       Console.WriteLine("\tBacon is ready");
       FryBacon_Timer.recordEndTime();
       Console.WriteLine(FryBacon_Timer.ToString());
+
+      Toast toast = await toastTask;
+      Console.WriteLine("\tToast is ready");
+      ToastBread_Timer.recordEndTime();
+      Console.WriteLine(ToastBread_Timer.ToString());
+
+      Juice OrangeJuice = PourOrangeJuice();
+      Console.WriteLine("\tOrange juice is ready");
+      Console.WriteLine("\tBreakfast is ready!");
 
       _Timer.recordEndTime();
       Console.WriteLine(_Timer.ToString());
@@ -87,11 +86,20 @@ namespace AsyncBreakfast
       return new Toast();
     }
 
+    private static async Task<Toast> MakeToastWithButterAndJamAsync(int number)
+    {
+      var toast = await ToastBreadAsync(number);
+      ApplyButter(toast);
+      ApplyJam(toast);
+
+      return toast;
+    }
+
     private static async Task<Bacon> FryBaconAsync(int slices)
     {
       if (slices != 0)
       {
-        
+
 
         Console.WriteLine($"\tPutting {slices} slices of bacon in the pan");
         Console.WriteLine("\tCooking first side of bacon...");
