@@ -12,16 +12,25 @@ namespace SyncBreakfast
       Coffee cup = PourCoffee();
       Console.WriteLine("\tCoffee is ready");
 
+      Timer FryEggs_Timer = new Timer("Frying eggs task");
       Egg eggs = FryEggs(2);
       Console.WriteLine("\tEggs are ready");
+      FryEggs_Timer.recordEndTime();
+      Console.WriteLine(FryEggs_Timer.ToString());
 
+      Timer FryBacon_Timer = new Timer("Frying bacon task");
       Bacon bacon = FryBacon(3);
       Console.WriteLine("\tBacon is ready");
+      FryBacon_Timer.recordEndTime();
+      Console.WriteLine(FryBacon_Timer.ToString());
 
+      Timer ToastBread_Timer = new Timer("Toasting task");
       Toast toast = ToastBread(2);
       ApplyButter(toast);
       ApplyJam(toast);
       Console.WriteLine("\tToast is ready");
+      ToastBread_Timer.recordEndTime();
+      Console.WriteLine(ToastBread_Timer.ToString());
 
       Juice OrangeJuice = PourOrangeJuice();
       Console.WriteLine("\tOrange juice is ready");
@@ -60,8 +69,6 @@ namespace SyncBreakfast
     {
       if (slices != 0)
       {
-        Timer _Timer = new Timer("Toasting task");
-
         for (int slice = 0; slice < slices; slice++)
         {
           Console.WriteLine("\tPutting a slice of bread in the toaster");
@@ -69,9 +76,6 @@ namespace SyncBreakfast
         Console.WriteLine("\tStart toasting...");
         Task.Delay(60000).Wait();
         Console.WriteLine("\tRemove toast from toaster");
-
-        _Timer.recordEndTime();
-        Console.WriteLine(_Timer.ToString());
       }
 
       return new Toast();
@@ -81,8 +85,6 @@ namespace SyncBreakfast
     {
       if (slices != 0)
       {
-        Timer _Timer = new Timer("Frying bacon task");
-
         Console.WriteLine($"\tPutting {slices} slices of bacon in the pan");
         Console.WriteLine("\tCooking first side of bacon...");
         Task.Delay(60000).Wait();
@@ -93,9 +95,6 @@ namespace SyncBreakfast
         Console.WriteLine("\tCooking the second side of bacon...");
         Task.Delay(60000).Wait();
         Console.WriteLine("\tPut bacon on plate");
-
-        _Timer.recordEndTime();
-        Console.WriteLine(_Timer.ToString());
       }
 
       return new Bacon();
@@ -105,17 +104,12 @@ namespace SyncBreakfast
     {
       if (howMany != 0)
       {
-        Timer _Timer = new Timer("Frying eggs task");
-
         Console.WriteLine("\tWarming the egg pan...");
         Task.Delay(60000).Wait();
         Console.WriteLine($"\tCracking {howMany} eggs");
         Console.WriteLine("\tCooking the eggs ...");
         Task.Delay(60000).Wait();
         Console.WriteLine("\tPut eggs on plate");
-
-        _Timer.recordEndTime();
-        Console.WriteLine(_Timer.ToString());
       }
 
       return new Egg();

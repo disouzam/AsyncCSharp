@@ -12,25 +12,25 @@ namespace AsyncBreakfast
       Coffee cup = PourCoffee();
       Console.WriteLine("\tCoffee is ready");
 
-      Timer FryEggsAsync_Timer = new Timer("Frying eggs task");
+      Timer FryEggs_Timer = new Timer("Frying eggs task");
       Egg eggs = await FryEggsAsync(2);
       Console.WriteLine("\tEggs are ready");
-      FryEggsAsync_Timer.recordEndTime();
-      Console.WriteLine(FryEggsAsync_Timer.ToString());
+      FryEggs_Timer.recordEndTime();
+      Console.WriteLine(FryEggs_Timer.ToString());
 
-      Timer FryBaconAsync_Timer = new Timer("Frying bacon task");
+      Timer FryBacon_Timer = new Timer("Frying bacon task");
       Bacon bacon = await FryBaconAsync(3);
       Console.WriteLine("\tBacon is ready");
-      FryBaconAsync_Timer.recordEndTime();
-      Console.WriteLine(FryBaconAsync_Timer.ToString());
+      FryBacon_Timer.recordEndTime();
+      Console.WriteLine(FryBacon_Timer.ToString());
 
-      Timer ToastBreadAsync_Timer = new Timer("Toasting task");
+      Timer ToastBread_Timer = new Timer("Toasting task");
       Toast toast = await ToastBreadAsync(2);
       ApplyButter(toast);
       ApplyJam(toast);
       Console.WriteLine("\tToast is ready");
-      ToastBreadAsync_Timer.recordEndTime();
-      Console.WriteLine(ToastBreadAsync_Timer.ToString());
+      ToastBread_Timer.recordEndTime();
+      Console.WriteLine(ToastBread_Timer.ToString());
 
       Juice OrangeJuice = PourOrangeJuice();
       Console.WriteLine("\tOrange juice is ready");
