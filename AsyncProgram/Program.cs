@@ -8,80 +8,80 @@ namespace AsyncBreakfast
         static async Task Main(string[] args)
         {
             Coffee cup = PourCoffee();
-            Console.WriteLine("Coffee is ready");
+            Console.WriteLine($"{DateTime.Now} - Coffee is ready");
 
             Egg eggs = await FryEggsAsync(2);
-            Console.WriteLine("Eggs are ready");
+            Console.WriteLine($"{DateTime.Now} - Eggs are ready");
 
             Bacon bacon = await FryBaconAsync(3);
-            Console.WriteLine("Bacon is ready");
+            Console.WriteLine($"{DateTime.Now} - Bacon is ready");
 
             Toast toast = await ToastBreadAsync(2);
             ApplyButter(toast);
             ApplyJam(toast);
-            Console.WriteLine("Toast is ready");
+            Console.WriteLine($"{DateTime.Now} - Toast is ready");
 
             Juice oj = PourOJ();
-            Console.WriteLine("Orange juice is ready");
-            Console.WriteLine("Breakfast is ready!");
+            Console.WriteLine($"{DateTime.Now} - Orange juice is ready");
+            Console.WriteLine($"{DateTime.Now} - Breakfast is ready!");
         }
 
         private static Juice PourOJ()
         {
-            Console.WriteLine("Pouring orange juice");
+            Console.WriteLine($"{DateTime.Now} - Pouring orange juice");
             return new Juice();
         }
 
         private static void ApplyJam(Toast toast) =>
-            Console.WriteLine("Putting jam on the toast");
+            Console.WriteLine($"{DateTime.Now} - Putting jam on the toast");
 
         private static void ApplyButter(Toast toast) =>
-            Console.WriteLine("Putting butter on the toast");
+            Console.WriteLine($"{DateTime.Now} - Putting butter on the toast");
 
         private static async Task<Toast> ToastBreadAsync(int slices)
         {
             for (int slice = 0; slice < slices; slice++)
             {
-                Console.WriteLine("Putting a slice of bread in the toaster");
+                Console.WriteLine($"{DateTime.Now} - Putting a slice of bread in the toaster");
             }
-            Console.WriteLine("Start toasting...");
+            Console.WriteLine($"{DateTime.Now} - Start toasting...");
             await Task.Delay(3000);
-            Console.WriteLine("Remove toast from toaster");
+            Console.WriteLine($"{DateTime.Now} - Remove toast from toaster");
 
             return new Toast();
         }
 
         private static async Task<Bacon> FryBaconAsync(int slices)
         {
-            Console.WriteLine($"putting {slices} slices of bacon in the pan");
-            Console.WriteLine("cooking first side of bacon...");
+            Console.WriteLine($"{DateTime.Now} - Putting {slices} slices of bacon in the pan");
+            Console.WriteLine($"{DateTime.Now} - Cooking first side of bacon...");
             await Task.Delay(3000);
             for (int slice = 0; slice < slices; slice++)
             {
-                Console.WriteLine("flipping a slice of bacon");
+                Console.WriteLine($"{DateTime.Now} - Flipping a slice of bacon");
             }
-            Console.WriteLine("cooking the second side of bacon...");
+            Console.WriteLine($"{DateTime.Now} - Cooking the second side of bacon...");
             await Task.Delay(3000);
-            Console.WriteLine("Put bacon on plate");
+            Console.WriteLine($"{DateTime.Now} - Put bacon on plate");
 
             return new Bacon();
         }
 
         private static async Task<Egg> FryEggsAsync(int howMany)
         {
-            Console.WriteLine("Warming the egg pan...");
+            Console.WriteLine($"{DateTime.Now} - Warming the egg pan...");
             await Task.Delay(3000);
-            Console.WriteLine($"cracking {howMany} eggs");
-            Console.WriteLine("cooking the eggs ...");
+            Console.WriteLine($"{DateTime.Now} - Cracking {howMany} eggs");
+            Console.WriteLine($"{DateTime.Now} - Cooking the eggs ...");
             await Task.Delay(3000);
-            Console.WriteLine("Put eggs on plate");
+            Console.WriteLine($"{DateTime.Now} - Put eggs on plate");
 
             return new Egg();
         }
 
         private static Coffee PourCoffee()
         {
-            Console.WriteLine("Pouring coffee");
+            Console.WriteLine($"{DateTime.Now} - Pouring coffee");
             return new Coffee();
         }
     }
