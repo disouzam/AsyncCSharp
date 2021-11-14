@@ -8,7 +8,9 @@ namespace Async2
         static async Task Main(string[] args)
         {
             Console.WriteLine("Main Program has started!");
-            AsyncMethod1.Method1();
+            
+            await AsyncMethod1.Method1();
+
             Console.WriteLine("Main Program just finished!");
         }
     }

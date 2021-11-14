@@ -12,7 +12,7 @@ namespace Async2
       int delay = 15000;
       Console.WriteLine($"Method 1 has started! - {startTime = DateTime.Now}");
       
-      Task.Delay(delay);
+      await Task.Delay(delay);
 
       DateTime endTime;
       Console.WriteLine($"Method 1 finished - Just have finished at {endTime = startTime.AddMilliseconds(delay)}! - {((DateTime.Now < endTime) ? "Wrong Early execution" : "Correct execution.")}");
