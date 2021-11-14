@@ -14,8 +14,9 @@ namespace Async2
       
       await Task.Delay(delay);
 
-      DateTime endTime;
-      Console.WriteLine($"Method 1 finished - Just have finished at {endTime = startTime.AddMilliseconds(delay)}! - {((DateTime.Now < endTime) ? "Wrong Early execution" : "Correct execution.")}");
+      DateTime expectedEndTime;
+      DateTime actualEndTime;
+      Console.WriteLine($"Expected end time: {expectedEndTime = startTime.AddMilliseconds(delay)} <> Actual end time: {actualEndTime = DateTime.Now} >>> {((actualEndTime < expectedEndTime) ? "Wrong Early execution" : "Correct execution.")}");
     }
   }
 }
