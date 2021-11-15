@@ -74,5 +74,17 @@
       ],
       "problemMatcher": "$msCompile"
     },
+    {
+      "label": "build SixTipsAsync",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/SixTipsAsync/SixTipsAsync.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
   ]
 }
