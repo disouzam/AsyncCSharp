@@ -19,5 +19,8 @@ https://www.youtube.com/watch?v=My2gAv5Vrkk
 ### Six Essential Tips For Async by Lucian Wischik
 https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async/Three-Essential-Tips-For-Async-Introduction
 
-#### Tip1: Async void is for top-level event-handlers only
+#### Tip 1: Async void is for top-level event-handlers only
 https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async/Tip-1-Async-void-is-for-top-level-event-handlers-only
+
+#### Tip 2: Distinguish CPU-Bound work from IO-bound work
+https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async/Tip-2-Distinguish-CPU-Bound-work-from-IO-bound-work
