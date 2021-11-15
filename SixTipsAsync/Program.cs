@@ -27,12 +27,15 @@ namespace SixTipsAsync
         Console.WriteLine("The threshold was reached.");
         string message = await SomeTaskAsync();
         Console.WriteLine($"This is the return message: {message}");
-        Console.WriteLine("Console will be terminated.");
-        Environment.Exit(0);
       }
       catch (System.Exception ex)
       {
         Console.WriteLine("Error posting data to server. " + ex.Message);
+      }
+      finally
+      {
+        Console.WriteLine("Console will be terminated.");
+        Environment.Exit(0);
       }
 
     }
