@@ -6,12 +6,12 @@ namespace SixTipsAsync
 {
   public class Tip2_ThreadsDataBinding
   {
-    public static async Task Run()
+    public static async Task RunDataBoundTask()
     {
       Console.WriteLine("START  Tip 2: Threads and databinding");
       DateTime start;
       DateTime end;
-      int length = new Random().Next(100, 1000);
+      int length = new Random().Next(100, 500);
 
       #region Correct implementation
       Console.WriteLine("Correct implementation");
@@ -53,7 +53,7 @@ namespace SixTipsAsync
     {
       Guid _GUID = Guid.NewGuid();
       Console.WriteLine($"\t{id}/{total} - {_GUID} - Started.");
-      await Task.Delay(100);
+      await Task.Delay(500);
       Console.WriteLine($"\t\t{id}/{total} - {_GUID} - Finished.");
     }
   }
