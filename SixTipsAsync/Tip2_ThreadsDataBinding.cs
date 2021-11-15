@@ -85,6 +85,33 @@ namespace SixTipsAsync
       Console.WriteLine($"Quantitative Finance simulation run for {end - start}");
     }
 
+    public static async Task RunCPUBoundTaskParallel()
+    {
+      DateTime start;
+      DateTime end;
+      start = DateTime.Now;
+      var expectedPayoutTask = Task.Run(() => SomeCPUBoundParallel());
+
+      DateTime currentTime = DateTime.Now;
+      DateTime oldTime = DateTime.Now;
+      while (expectedPayoutTask.IsCompleted == false)
+      {
+        currentTime = DateTime.Now;
+        if (currentTime - oldTime > TimeSpan.FromSeconds(60))
+        {
+          Console.WriteLine($"{DateTime.Now} - Running for {currentTime - start}");
+          oldTime = currentTime;
+        }
+      }
+
+      var expectedPayout = await expectedPayoutTask;
+
+      end = DateTime.Now;
+
+      Console.WriteLine($"Total Payout inside RunCPUBoundTaskParallel = {expectedPayout}");
+      Console.WriteLine($"Quantitative Finance simulation run for {end - start}");
+    }
+
     private static double SomeCPUBound()
     {
       int iterations = 1000000;
@@ -104,13 +131,13 @@ namespace SixTipsAsync
       return expectedPayout;
     }
 
-    private static async Task<double> SomeCPUBoundAsync()
+    private static double SomeCPUBoundParallel()
     {
       int iterations = 1000000;
       double[] prices = new double[252];
       double total_payout = 0;
 
-      for (int i = 0; i < iterations; i++)
+      Parallel.For(0, iterations, (i) =>
       {
         prices = SimulateStockPrice(100, 0.2, 0.2);
         total_payout += Payout_AsianCallOption(prices, 110);
@@ -118,7 +145,8 @@ namespace SixTipsAsync
         {
           Console.WriteLine($"i = {i}");
         }
-      }
+      });
+
       double expectedPayout = total_payout / iterations;
       Console.WriteLine($"Total Payout inside SomeCPUBoundAsync = {expectedPayout}");
       return expectedPayout;
