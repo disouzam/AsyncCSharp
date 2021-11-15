@@ -22,28 +22,36 @@ namespace SixTipsAsync
 
     static async void c_ThresholdReached(object sender, EventArgs e)
     {
+      await InternalWrapperAsync();
+    }
+
+    private static async Task InternalWrapperAsync()
+    {
       try
       {
         Console.WriteLine("The threshold was reached.");
-        string message = await SomeTaskAsync();
+        string message = await Some3rdPartyTaskAsync();
         Console.WriteLine($"This is the return message: {message}");
-        Console.WriteLine("Console will be terminated.");
-        Environment.Exit(0);
+
       }
       catch (System.Exception ex)
       {
         Console.WriteLine("Error posting data to server. " + ex.Message);
       }
-
+      finally
+      {
+        Console.WriteLine("Console will be terminated.");
+        Environment.Exit(0);
+      }
     }
 
-    private static async Task<string> SomeTaskAsync()
+    private static async Task<string> Some3rdPartyTaskAsync()
     {
-      Console.WriteLine("SomeTaskAsync was called.");
-      string message = "This is the response from SomeTaskAsync.";
+      Console.WriteLine("Some3rdPartyTaskAsync was called.");
+      string message = "This is the response from Some3rdPartyTaskAsync.";
       await Task.Delay(1000);
-      throw new Exception("SomeTaskAsync has exception.");
-      Console.WriteLine("SomeTaskAsync finished.");
+      throw new Exception("Some3rdPartyTaskAsync has exception.");
+      Console.WriteLine("Some3rdPartyTaskAsync finished.");
       return message;
     }
   }
