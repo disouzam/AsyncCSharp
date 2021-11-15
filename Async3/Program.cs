@@ -13,23 +13,32 @@ namespace Async3
       Console.WriteLine("Starting Async3 program...\n");
 
       // Call a first async method
-      int ret1 = 0;
-      ret1 = await MethodCollection.Method1Async();
+      Task<int> ret1Task = MethodCollection.Method1Async();
+
+      // Call a second async method
+      Task<int> ret3Task = MethodCollection.Method3Async();
 
       // Call a sync method that doesn't depend on the first async
       int ret2 = 0;
-      ret2 = MethodCollection.Method2();
-
-      // Call a second async method
-      int ret3 = 0;
-      ret3 = await MethodCollection.Method3Async();
+      // ret2 = MethodCollection.Method2();
 
       // Call a second sync method that doesn't depend on the first async
       int ret4 = 0;
-      ret4 = MethodCollection.Method4();
+      // ret4 = MethodCollection.Method4();
+
+      var ret2N4 = await MethodCollection.MethodWrapper();
 
       // Wait for two async methods be complete
       // Consolidate the result in one single output
+      int ret1 = 0;
+      ret1 = await ret1Task;
+
+      int ret3 = 0;
+      ret3 = await ret3Task;
+
+      ret2 = ret2N4[0];
+      ret4 = ret2N4[1];
+
       var result = (ret2 + ret4) / (ret1 * ret4);
       Console.WriteLine($"Result: {result}");
 
