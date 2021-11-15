@@ -9,7 +9,8 @@ namespace SixTipsAsync
     {
       // Tip1_AsyncVoid.Run();
       // await Tip2_ThreadsDataBinding.RunDataBoundTask(); 
-      await Tip2_ThreadsDataBinding.RunCPUBoundTask();
+      // await Tip2_ThreadsDataBinding.RunCPUBoundTask();
+      await Tip2_ThreadsDataBinding.RunCPUBoundTaskParallel();
     }
   }
 }

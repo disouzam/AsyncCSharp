@@ -24,3 +24,13 @@ https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async/Tip-1-Async-void
 
 #### Tip 2: Distinguish CPU-Bound work from IO-bound work
 https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async/Tip-2-Distinguish-CPU-Bound-work-from-IO-bound-work
+
+
+### Tip 3: Wrap events up in Task-returning APIs and await them
+https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async/Lucian03-TipsForAsyncThreadsAndDatabinding
+
+## Tip 4: Async Library Methods Shouldn't Lie
+https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async/Async-Library-Methods-Shouldn-t-Lie
+
+# Further content from Lucian Wischik:
+https://docs.microsoft.com/en-us/archive/blogs/lucian/talk-async-best-practices

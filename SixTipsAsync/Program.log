@@ -6,3 +6,16 @@ i = 999900
 Total Payout inside SomeCPUBound = 5.250697333403198
 Total Payout inside RunCPUBoundTask = 5.250697333403198
 Quantitative Finance simulation run for 00:35:33.6131005
+
+
+
+// Parallel version
+
+i = 999900
+i = 999100
+i = 999800
+i = 998600
+i = 998500
+Total Payout inside SomeCPUBoundAsync = 5.219403745547641
+Total Payout inside RunCPUBoundTaskParallel = 5.219403745547641
+Quantitative Finance simulation run for 00:20:18.3798791
