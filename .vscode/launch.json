@@ -79,7 +79,7 @@
       "cwd": "${workspaceFolder}/SixTipsAsync",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
       "console": "integratedTerminal",
-      "stopAtEntry": true
+      "stopAtEntry": false
     },
     {
       "name": ".NET Core Attach",

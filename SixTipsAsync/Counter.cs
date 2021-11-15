@@ -13,6 +13,10 @@ class Counter
     Console.WriteLine($"Threshold was set to be: {threshold}");
   }
 
+  public int Total() => total;
+
+  public int Threshold() => threshold;
+
   public void Add(int x)
   {
     total += x;
@@ -23,6 +27,4 @@ class Counter
   }
 
   public event EventHandler ThresholdReached;
-
-
 }
