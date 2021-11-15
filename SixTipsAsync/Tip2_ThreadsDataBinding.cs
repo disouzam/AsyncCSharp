@@ -104,6 +104,26 @@ namespace SixTipsAsync
       return expectedPayout;
     }
 
+    private static async Task<double> SomeCPUBoundAsync()
+    {
+      int iterations = 1000000;
+      double[] prices = new double[252];
+      double total_payout = 0;
+
+      for (int i = 0; i < iterations; i++)
+      {
+        prices = SimulateStockPrice(100, 0.2, 0.2);
+        total_payout += Payout_AsianCallOption(prices, 110);
+        if (i % 100 == 0)
+        {
+          Console.WriteLine($"i = {i}");
+        }
+      }
+      double expectedPayout = total_payout / iterations;
+      Console.WriteLine($"Total Payout inside SomeCPUBoundAsync = {expectedPayout}");
+      return expectedPayout;
+    }
+
     // Box-Muller technique, generates "standard normal" distribution,(mean = 0,, variance = 1)
     private static double NextNormal()
     {
