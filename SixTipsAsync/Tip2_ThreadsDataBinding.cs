@@ -11,7 +11,7 @@ namespace SixTipsAsync
       Console.WriteLine("START  Tip 2: Threads and databinding");
       DateTime start;
       DateTime end;
-      int length = new Random().Next(1, 10);
+      int length = new Random().Next(100, 1000);
 
       #region Correct implementation
       Console.WriteLine("Correct implementation");
@@ -21,13 +21,13 @@ namespace SixTipsAsync
 
       for (int i = 0; i < length; i++)
       {
-        taskList.Add(SomeDataBoundAsync(i));
+        taskList.Add(SomeDataBoundAsync(i, length));
       }
 
       await Task.WhenAll(taskList);
 
       end = DateTime.Now;
-      Console.WriteLine($"Run for {end - start} - Average of {(end - start) / length}");
+      TimeSpan correctImplTime = end - start;
       #endregion
 
       #region Wrong implementation
@@ -36,23 +36,25 @@ namespace SixTipsAsync
 
       for (int i = 0; i < length; i++)
       {
-        await SomeDataBoundAsync(i);
+        await SomeDataBoundAsync(i, length);
       }
 
       end = DateTime.Now;
-      Console.WriteLine($"Run for {end - start} - Average of {(end - start) / length}");
+      TimeSpan wrongImplTime = end - start;
       #endregion
 
+      Console.WriteLine($"Correct implementation: Run for {correctImplTime} - Average of {(correctImplTime) / length}");
+      Console.WriteLine($"Wrong implementation: Run for {wrongImplTime} - Average of {(wrongImplTime) / length}");
       Console.WriteLine("FINISH Tip 2: Threads and databinding");
 
     }
 
-    private static async Task SomeDataBoundAsync(int id)
+    private static async Task SomeDataBoundAsync(int id, int total)
     {
       Guid _GUID = Guid.NewGuid();
-      Console.WriteLine($"\t{id} - {_GUID} - Started.");
-      await Task.Delay(10000);
-      Console.WriteLine($"\t{id} - {_GUID} - Finished.");
+      Console.WriteLine($"\t{id}/{total} - {_GUID} - Started.");
+      await Task.Delay(100);
+      Console.WriteLine($"\t\t{id}/{total} - {_GUID} - Finished.");
     }
   }
 }
