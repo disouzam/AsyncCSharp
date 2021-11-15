@@ -39,7 +39,7 @@ namespace SixTipsAsync
         Console.WriteLine("Error posting data to server. " + ex.Message);
       }
       finally
-      {
+      { 
         Console.WriteLine("Console will be terminated.");
         Environment.Exit(0);
       }
