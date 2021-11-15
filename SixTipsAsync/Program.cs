@@ -5,9 +5,10 @@ namespace SixTipsAsync
 {
   class Program
   {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
-      Tip1_AsyncVoid.Run();
+      // Tip1_AsyncVoid.Run();
+      await Tip2_ThreadsDataBinding.Run(); 
     }
   }
 }
