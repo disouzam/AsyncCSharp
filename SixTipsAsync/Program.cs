@@ -9,7 +9,7 @@ namespace SixTipsAsync
     {
       Console.WriteLine("Tip1: Async void is only for event handlers.");
 
-      Counter c = new Counter(new Random().Next(20));
+      Counter c = new Counter(new Random().Next(5));
       c.ThresholdReached += c_ThresholdReached;
 
       Console.WriteLine("press 'a' key to increase total");
@@ -26,6 +26,7 @@ namespace SixTipsAsync
       {
         Console.WriteLine("The threshold was reached.");
         string message = await SomeTaskAsync();
+        await Task.Delay(5000);
         Console.WriteLine($"This is the return message: {message}");
       }
       catch (System.Exception ex)
