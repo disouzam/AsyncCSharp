@@ -29,8 +29,14 @@ https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async/Tip-2-Distinguis
 ### Tip 3: Wrap events up in Task-returning APIs and await them
 https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async/Lucian03-TipsForAsyncThreadsAndDatabinding
 
-## Tip 4: Async Library Methods Shouldn't Lie
+### Tip 4: Async Library Methods Shouldn't Lie
 https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async/Async-Library-Methods-Shouldn-t-Lie
+
+### Tip 5: Async libraries APIs should be chunky
+https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async/Async-libraries-APIs-should-be-chunky
+
+### Tip 6: Async library methods should consider using Task.ConfigureAwait(false)
+https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async/Async-library-methods-should-consider-using-Task-ConfigureAwait-false-?ocid=player
 
 # Further content from Lucian Wischik:
 https://docs.microsoft.com/en-us/archive/blogs/lucian/talk-async-best-practices
